@@ -25,8 +25,8 @@ export default function Cart({ cart }) {
       stripe.redirectToCheckout({
         lineItems: lineItems,
         mode: 'payment',
-        successUrl: 'https://github.com/haleyhamill',
-        cancelUrl: 'https://github.com/haleyhamill',
+        successUrl: 'https://gallant-liskov-328fab.netlify.app',
+        cancelUrl: 'https://gallant-liskov-328fab.netlify.app',
         customerEmail: email,
       }).then(response => {
         // this will only log if the redirect did not work
