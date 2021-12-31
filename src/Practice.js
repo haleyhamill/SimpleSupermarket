@@ -1,20 +1,23 @@
-import React, {useState, useEffect} from "react";
+import { useEffect } from "react";
 
-function App() {
-    const [users, setUsers] = useState();
+function CurrencySelector() {
+    const [currency, setCurrency] = useState("");
 
     useEffect(() => {
-        fetch("")
-        .then(response => response.json())
-        .then(data => {
-            setUsers(data);
-        });
+        console.log(currency);
     }, []);
 
-    if (!users) {
-        return null
+    function handleCurrencyChange(event) {
+        setCurrency(event.target.value);
     }
+
     return <>
-    <h1>Users {{users.length}}</h1>
-    </>
+    <h3>Select currency</h3>
+    <select onChange={handleCurrencyChange}>
+        <option value="usd">USD</option>
+        <option value="eur">EUR</option>
+        <option value="cad">CAD</option>
+    </select>
+    <h1>{currency}</h1>
+    </>;
 }
