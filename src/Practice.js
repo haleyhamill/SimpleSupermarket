@@ -1,8 +1,12 @@
-import React, {useContext} from "react";
-import {ThemeContext} from "./ThemeContext.js";
+import React from "react";
+import {useHistory} from "react-router-dom";
 
-function Button(props) {
-    const theme = useContext(ThemeContext);
+export default function Home() {
+    const history = useHistory();
 
-    return null;
+    function handleClick() {
+        history.push('/dashboard')
+    }
+
+    return <button onClick={handleClick}>Start</button>;
 }
