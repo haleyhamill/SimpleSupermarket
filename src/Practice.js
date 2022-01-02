@@ -6,17 +6,10 @@ const counterSlice = createSlice({
     value: 0,
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    // TODO
+    incrementBy: (state, action) => {
+      state.value += action.payload
     },
-    // TODO decrement
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    // TODO reset
-    reset: (state) => {
-      state.value = 0;
-    }
   },
 });
 
@@ -24,17 +17,9 @@ const store = configureStore({
   reducer: counterSlice.reducer,
 });
 
-/*********************************************
- * The code below has NOT been explained yet *
- *         feel free to take a peek          *
- *    but don't worry too much about it!     *
- *********************************************/
-const { increment, decrement, reset } = counterSlice.actions;
+const { incrementBy } = counterSlice.actions;
 
 const counterValue = document.querySelector("#counter-value");
-const addButton = document.querySelector("#add-button");
-const subButton = document.querySelector("#sub-button");
-const resetButton = document.querySelector("#reset-button");
 
 store.subscribe(() => {
     const newState = store.getState();
@@ -42,14 +27,14 @@ store.subscribe(() => {
     counterValue.textContent = newState.value;
 });
 
-addButton.addEventListener("click", () => {
-    store.dispatch(increment());
+document.querySelector("#add-one").addEventListener("click", () => {
+    store.dispatch(incrementBy(1));
 });
 
-subButton.addEventListener("click", () => {
-    store.dispatch(decrement());
+document.querySelector("#add-five").addEventListener("click", () => {
+    store.dispatch(incrementBy(5));
 });
 
-resetButton.addEventListener("click", () => {
-    store.dispatch(reset());
+document.querySelector("#add-ten").addEventListener("click", () => {
+    store.dispatch(incrementBy(10));
 });
