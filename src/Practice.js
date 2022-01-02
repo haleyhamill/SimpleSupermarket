@@ -7,9 +7,16 @@ const counterSlice = createSlice({
   },
   reducers: {
     increment: (state) => {
-      // TODO: handle the "increment" action
-      state.value += 1
+      state.value += 1;
     },
+    // TODO decrement
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    // TODO reset
+    reset: (state) => {
+      state.value = 0;
+    }
   },
 });
 
@@ -22,10 +29,12 @@ const store = configureStore({
  *         feel free to take a peek          *
  *    but don't worry too much about it!     *
  *********************************************/
-const { increment } = counterSlice.actions;
+const { increment, decrement, reset } = counterSlice.actions;
 
 const counterValue = document.querySelector("#counter-value");
 const addButton = document.querySelector("#add-button");
+const subButton = document.querySelector("#sub-button");
+const resetButton = document.querySelector("#reset-button");
 
 store.subscribe(() => {
     const newState = store.getState();
@@ -35,4 +44,12 @@ store.subscribe(() => {
 
 addButton.addEventListener("click", () => {
     store.dispatch(increment());
+});
+
+subButton.addEventListener("click", () => {
+    store.dispatch(decrement());
+});
+
+resetButton.addEventListener("click", () => {
+    store.dispatch(reset());
 });
