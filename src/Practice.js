@@ -1,12 +1,37 @@
-import React from "react";
-import {useHistory} from "react-router-dom";
+import { createStore } from "redux";
 
-export default function Home() {
-    const history = useHistory();
+const initialState = { value: 0 };
 
-    function handleClick() {
-        history.push('/dashboard')
+const counterReducer = (state = initialState, action) => {
+    console.log("Current state", state);
+    console.log("Received action", action);
+
+    if (action.type === "counter/increment") {
+        return {
+            value: state.value + 1 // important: do NOT mutate the state.
+        };
     }
 
-    return <button onClick={handleClick}>Start</button>;
-}
+    return state; // return the state as is (in all other cases)
+};
+
+const store = createStore(counterReducer);
+
+
+/*********************************************
+ * The code below has NOT been explained yet *
+ *         feel free to take a peek          *
+ *    but don't worry too much about it!     *
+ *********************************************/
+const counterValue = document.querySelector("#counter-value");
+const addButton = document.querySelector("#add-button");
+
+store.subscribe(() => {
+    const newState = store.getState();
+    console.log("New state", newState);
+    counterValue.textContent = newState.value;
+});
+
+addButton.addEventListener("click", () => {
+    store.dispatch({ type: "counter/increment" });
+});
