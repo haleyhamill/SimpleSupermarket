@@ -1,10 +1,11 @@
 /**
- * @param {string} name
+ * @param {number} number
  */
- function sayHello(name) {
-    return `Hello ${name}`;
+ function convertNumberToString(number) {
+    return number.toString();
 }
 
 // Sample usage - do not modify
-console.log(sayHello("Alex")); // "Hello Alex"
-console.log(sayHello("Sam")); // "Hello Sam"
+console.log(convertNumberToString(42)); // "42"
+console.log(convertNumberToString(97)); // "97"
+console.log(convertNumberToString(11)); // "11"
