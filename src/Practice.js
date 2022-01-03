@@ -1,3 +1,2 @@
-function multiply(a, b) {
-    return a*b;
-}
+"this is a string";
+"this is another string";
