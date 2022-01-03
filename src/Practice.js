@@ -1,8 +1,10 @@
-import {getDescription} from "./helpers.js";
+"Hello" + "World"
 
-const input = document.querySelector("#input");
-const output = document.querySelector("#output");
+let prefix = "Mrs.";
+let name = "Sam";
+let string = prefix + " " + name;
 
-input.addEventListener("input", (event) => {
-    output.textContent = getDescription(event.currentTarget.value);
-});
+let name = "Sam";
+name = name + " Blue";
+console.log(name);
+name += " Blue";
