@@ -1,11 +1,15 @@
 /**
- * @param {number} number
+ * @param {number} age
  */
- function convertNumberToString(number) {
-    return number.toString();
+ function canVote(age) {
+    if (age >= 18) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Sample usage - do not modify
-console.log(convertNumberToString(42)); // "42"
-console.log(convertNumberToString(97)); // "97"
-console.log(convertNumberToString(11)); // "11"
+console.log(canVote(25)); // true
+console.log(canVote(18)); // true
+console.log(canVote(10)); // false
