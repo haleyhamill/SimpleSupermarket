@@ -1,10 +1,11 @@
 /**
- * @param {string} age
+ * @param {array} apps
  */
- export function getNextAge(age) {
-    if (age === "") {
-        return 0;
-    }
-    
-    return Number.parseInt(age, 10) + 1;
+ function useCalculator(apps) {
+    apps.push("Calculator");
+    return apps;
 }
+
+// Sample usage - do not modify
+console.log(useCalculator(["Clock", "Twitter"])); // ["Clock", "Twitter", "Calculator"]
+console.log(useCalculator(["Weather"])); // ["Weather", "Calculator"]
