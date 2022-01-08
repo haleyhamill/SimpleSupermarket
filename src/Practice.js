@@ -1,5 +1,4 @@
-const getFullName = user => {
-    console.log(user);
-    const [firstName, lastName] = user;
-    return firstName + " " + lastName;
-}
+const items = ["Tissues", "Oranges"];
+
+const otherItems = [...items, "Tomatoes"];
+console.log(otherItems);
