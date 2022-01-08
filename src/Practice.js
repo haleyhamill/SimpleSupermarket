@@ -1,4 +1,5 @@
-const getLocationString = location => {
-    const [lat, lng] = location;
-    return `The latitude is ${lat} and the longitude is ${lng}`;
+const getFullName = user => {
+    console.log(user);
+    const [firstName, lastName] = user;
+    return firstName + " " + lastName;
 }
