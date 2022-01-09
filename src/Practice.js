@@ -1,4 +1,3 @@
-const items = ["Tissues", "Oranges"];
-
-const otherItems = [...items, "Tomatoes"];
-console.log(otherItems);
+const getCourseDetail = (course, detail) => {
+    return `The course ${detail} is ${course[detail]}`
+}
