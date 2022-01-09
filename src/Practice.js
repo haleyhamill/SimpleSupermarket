@@ -1,3 +1,3 @@
-const getCourseDetail = (course, detail) => {
-    return `The course ${detail} is ${course[detail]}`
+const getCountProperties = course => {
+    return Object.keys(course).length;
 }
