@@ -1,3 +1,7 @@
-const getUpperCasedProperties = course => {
-    return Object.keys(course).map(key => key.toUpperCase());
+function isPassing(grade) {
+    if (grade >= 10) {
+        return true
+    } else {
+        return false
+    }
 }
