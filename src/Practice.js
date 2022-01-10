@@ -1,6 +1,5 @@
-function product(grades) {
-    let total = 1;
-    grades.forEach((grade) => {
-        total = total * grade
-    })
+function multiplyNumbers(numbers) {
+    return numbers.reduce(function(total, current) {
+        return total * current
+    }, 1)
 }
