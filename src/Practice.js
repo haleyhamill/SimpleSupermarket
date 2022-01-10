@@ -1,10 +1,5 @@
-const results = [{
-    grade: 10,
-    student: "John"
-}, {
-    grade: 18,
-    student: "Jennifer"
-}, {
-    grade: 8,
-    student: "Katherine"
-}];
+function multiplyNumbers(numbers) {
+    return numbers.reduce(function(total, current) {
+        return total * current;
+    }, 1)
+}
