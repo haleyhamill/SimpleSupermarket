@@ -1,4 +1,10 @@
-let tries = 0;
-function retry() {
-    tries += 1;
-}
+const results = [{
+    grade: 10,
+    student: "John"
+}, {
+    grade: 18,
+    student: "Jennifer"
+}, {
+    grade: 8,
+    student: "Katherine"
+}];
