@@ -1,5 +1,8 @@
-let grades = [10, 5, 15, 20];
-
-let sum = grades.reduce(function(total, current) {
-    return total + current;
-}, 0);
+function getUser(name) {
+    const id = 2;
+    return {
+        id: id,
+        name: name,
+        age: 20
+    };
+}
