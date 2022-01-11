@@ -1,10 +1,8 @@
-const user = {
-    name: "Jad",
-    type: "admin"
-};
+const person = {
+    id: 3,
+    age: 18,
+    gender: "female",
+    name: "Sam"
+}
 
-const messages = {
-    "client": "Welcome to our shop",
-    "admin": "Welcome to the dashboard",
-    "editor": "Welcome to the content page"
-};
+const {age, gender} = person;
