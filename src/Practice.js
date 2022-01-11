@@ -1,8 +1,3 @@
-const person = {
-    id: 3,
-    age: 18,
-    gender: "female",
-    name: "Sam"
+function capitalize(word) {
+    return word[0].toUpperCase() + word.substring(1).toLowerCase();
 }
-
-const {age, gender} = person;
