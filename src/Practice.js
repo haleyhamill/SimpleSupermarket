@@ -1,9 +1,9 @@
-const socialImpact = tweets.reduce((total, current) => {
-    console.log(current);
-    return total + current.stats.likes + current.stats.retweets;
-}, 0);
-
-const socialImpact = tweets.reduce((total, current) => {
-    console.log(current);
-    return total + current.stats.likes + current.stats.retweets;
-}, 0);
+const runCode = () => {
+    console.log("Step 1");
+    try {
+        getData();
+    } catch (error) {
+        console.error(error);
+    }
+    console.log("Step 2");
+}
