@@ -1,9 +1,7 @@
-const runCode = () => {
-    console.log("Step 1");
-    try {
-        getData();
-    } catch (error) {
-        console.error(error);
+class User {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
-    console.log("Step 2");
 }
