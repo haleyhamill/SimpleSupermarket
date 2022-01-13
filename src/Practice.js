@@ -1,26 +1,30 @@
-// class definition
-class User {
-    constructor(firstName, lastName, preF, age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.preF = preF;
-        this.age = age;
+class MobilePhone {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
     }
 
-    getFullName() {
-        return `${this.preF}. ${this.firstName} ${this.lastName}`
-    }
-
-    canVote() {
-        return this.age >= 18;
+    getDescription() {
+        return `The ${this.name} costs ${this.price}`;
     }
 }
 
+class Android extends MobilePhone {
+    getVersion() {
+        return 12;
+    }
+}
+
+class iOS extends MobilePhone {
+    getVersion() {
+        return 15;
+    }
+}
 
 // Sample usage - do not modify
-const user1 = new User("Sam", "Doe", "Mrs", 20);
-console.log(user1.getFullName()); // "Mrs. Sam Doe"
-console.log(user1.canVote()); // true
-const user2 = new User("Alex", "Green", "Mr", 17);
-console.log(user2.getFullName()); // "Mr. Alex Green"
-console.log(user2.canVote()); // false
+const galaxy = new Android("Galaxy", 400);
+console.log(galaxy.getDescription()); // "The Galaxy costs 400"
+console.log(galaxy.getVersion()); // 12 (always for android phones)
+const iphone = new iOS("iPhone", 500);
+console.log(iphone.getDescription()); // "The iPhone costs 500"
+console.log(iphone.getVersion()); // 15 (always for iOS phones)
