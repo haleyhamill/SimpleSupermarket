@@ -1,11 +1,9 @@
-const wait = milliseconds => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, milliseconds);
-    });
+import {fakeFetch} from "./helpers.js";
+
+const init = () => {
+    fakeFetch()
+    .then(() => console.log("Fake fetch completed"));
 }
 
-wait(1000).then(() => {
-    console.log("waited 1 second");
-});
+// Sample usage (do not modify)
+init();
