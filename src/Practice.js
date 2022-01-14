@@ -1,3 +1,5 @@
-setTimeout(() => {
-    console.log("Hello World! Delayed");
-}, 2000);
+const delayedWelcome = name => {
+    setTimeout(() => {
+        console.log(`Welcome ${name}`);
+    }, 1000);
+}
