@@ -1,10 +1,10 @@
+import {getWeatherDescription} from "./weather.js";
+
 /**
- * @param {number} milliseconds
+ * @param {string} cityName
  */
- export const wait = milliseconds => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, milliseconds);
+const logWeatherDescription = cityName => {
+    getWeatherDescription(cityName).then(data => {
+        console.log(data);
     });
 }
