@@ -1,9 +1,6 @@
-import {fakeFetch} from "./helpers.js";
-
-const init = () => {
-    fakeFetch()
-    .then(() => console.log("Fake fetch completed"));
-}
-
-// Sample usage (do not modify)
-init();
+const result = wait(1000);
+console.log(result); // Promise {<pending>}
+result.then(() => {
+    console.log(result); // Promise {<fulfilled: undefined}
+});
+console.log(result); // Promise {<pending>}
