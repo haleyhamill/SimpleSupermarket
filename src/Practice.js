@@ -1,8 +1,3 @@
-const wait = milliseconds => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            const seconds = milliseconds / 1000;
-            resolve(seconds);
-        }, milliseconds);
-    });
+function capitalize(word) {
+    return word[0].toUpperCase() + word.substring(1).toLowerCase();
 }
