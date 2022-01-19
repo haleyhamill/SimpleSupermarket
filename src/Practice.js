@@ -1,11 +1,8 @@
-startLoader();
-getWeatherIn("Amsterdam")
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error(error);
-    })
-    .finally(() => {
-        stopLoader();
+const wait = milliseconds => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const seconds = milliseconds / 1000;
+            resolve(seconds);
+        }, milliseconds);
     });
+}
