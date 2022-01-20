@@ -1,9 +1,11 @@
-fetch(URL)
-    .then(response => response.json())
+import FetchWrapper from "./fetch-wrapper.js";
+
+const API = new FetchWrapper("URL");
+
+const checkForNewNotifications = () => {
+    API.get("/notifications/new.json")
     .then(data => {
         console.log(data);
-    })
-    .catch(error => {
-        // handle network errors
-        console.error(error);
+        showNewNotifications(data.count);
     });
+}
