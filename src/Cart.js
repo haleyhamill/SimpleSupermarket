@@ -7,7 +7,7 @@ import "./index.css";
 const stripeLoadedPromise = loadStripe(
   "pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate"
 );
-// Just adding another comment
+
 export default function Cart({ cart }) {
   const [email, setEmail] = useState("");
   const totalPrice = cart.reduce(
