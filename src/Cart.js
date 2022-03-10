@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Input from "./Input.js";
 import Button from "./Button.js";
-import './index.css';
+import "./index.css";
 
-const stripeLoadedPromise = loadStripe('pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate');
-
+const stripeLoadedPromise = loadStripe(
+  "pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate"
+);
+// Just adding another comment
 export default function Cart({ cart }) {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const totalPrice = cart.reduce(
     (total, product) => total + product.price * product.quantity,
     0
@@ -15,28 +17,32 @@ export default function Cart({ cart }) {
 
   const lineItems = cart.map((product) => {
     return {
-      price: product.price_id, quantity: product.quantity,
-    }
-  })
+      price: product.price_id,
+      quantity: product.quantity,
+    };
+  });
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    stripeLoadedPromise.then(stripe => {
-      stripe.redirectToCheckout({
-        lineItems: lineItems,
-        mode: 'payment',
-        successUrl: 'https://gallant-liskov-328fab.netlify.app',
-        cancelUrl: 'https://gallant-liskov-328fab.netlify.app',
-        customerEmail: email,
-      }).then(response => {
-        // this will only log if the redirect did not work
-        console.log(response.error);
-      }).catch(error => {
-        // wrong API key? you will see the error message here
-        console.log(error);
-      });
+    stripeLoadedPromise.then((stripe) => {
+      stripe
+        .redirectToCheckout({
+          lineItems: lineItems,
+          mode: "payment",
+          successUrl: "https://gallant-liskov-328fab.netlify.app",
+          cancelUrl: "https://gallant-liskov-328fab.netlify.app",
+          customerEmail: email,
+        })
+        .then((response) => {
+          // this will only log if the redirect did not work
+          console.log(response.error);
+        })
+        .catch((error) => {
+          // wrong API key? you will see the error message here
+          console.log(error);
+        });
     });
-  };  
+  }
 
   return (
     <div className="cart-layout">
@@ -89,13 +95,20 @@ export default function Cart({ cart }) {
               </tfoot>
             </table>
             <form onSubmit={handleFormSubmit} className="pay-form">
-  <p>
-    Enter your email and then click on pay and your products will be
-    delivered to you on the same day!
-  </p>
-  <Input autocomplete="email" placeholder="Email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
-  <Button type="submit">Pay</Button>
-</form>
+              <p>
+                Enter your email and then click on pay and your products will be
+                delivered to you on the same day!
+              </p>
+              <Input
+                autocomplete="email"
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+              <Button type="submit">Pay</Button>
+            </form>
           </>
         )}
       </div>
