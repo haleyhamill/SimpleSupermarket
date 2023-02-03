@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './index.css';
+import "./index.css";
 
 export default function Home() {
+  function sayLouder(text) {
+    return text.toUpperCase();
+  }
+
   return (
     <div className="home-layout">
       <div>
@@ -12,7 +16,7 @@ export default function Home() {
           and get your products delivered straight to your doorstep.
         </p>
         <Link to="/products" className="btn btn-default">
-          Start shopping
+          {sayLouder("Start shopping")}
         </Link>
       </div>
       <img
