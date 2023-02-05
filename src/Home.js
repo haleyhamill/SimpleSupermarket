@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Home() {
+  function getLoginStatus(is_loggedin) {
+    return is_loggedin ? <p>You are logged in</p> : <a href="/login">Login</a>;
+  }
+
   return (
     <div className="home-layout">
       <div>
+        <nav>{getLoginStatus(true)}</nav>
         <h1>Online shopping simplified</h1>
         <p>
           Order your groceries from <em>SuperM</em> with our easy to use app,
