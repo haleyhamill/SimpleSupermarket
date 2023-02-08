@@ -3,21 +3,9 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Home() {
-  function getNavbar(user) {
-    return <div>Logged in as {user.name}. Log out</div>;
-  }
-
-  const user = {
-    name: "Sam",
-    age: 34,
-  };
-
-  const navBar = getNavbar(user);
-
   return (
     <div className="home-layout">
       <div>
-        <nav>{navBar}</nav>
         <h1>Online shopping simplified</h1>
         <p>
           Order your groceries from <em>SuperM</em> with our easy to use app,
