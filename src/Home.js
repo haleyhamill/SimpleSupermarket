@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Home() {
+  function Navbar() {
+    return <div>{/*this is a comment - the comment won't render*/}hi</div>;
+  }
+
   return (
     <div className="home-layout">
       <div>
