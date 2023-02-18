@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Home() {
-  function Navbar() {
-    return <div>{/*this is a comment - the comment won't render*/}hi</div>;
-  }
+  <input
+    type="text"
+    placeholder="Enter your name"
+    onChange={() => console.log("change!")}
+  />;
 
   return (
     <div className="home-layout">
