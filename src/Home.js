@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Home() {
-  <input
-    type="text"
-    placeholder="Enter your name"
-    onChange={() => console.log("change!")}
-  />;
+  function handleLoginClick() {
+    console.log("Logging in...");
+  }
 
   return (
     <div className="home-layout">
       <div>
+        <button onClick={handleLoginClick}>Login</button>
         <h1>Online shopping simplified</h1>
         <p>
           Order your groceries from <em>SuperM</em> with our easy to use app,
